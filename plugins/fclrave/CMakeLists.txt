@@ -4,6 +4,7 @@
 find_package(PkgConfig QUIET)
 if(PKG_CONFIG_FOUND)
   pkg_check_modules(FCL fcl)
+  string(REPLACE ";" " " FCL_LDFLAGS "${FCL_LDFLAGS}")
 else()
   message("PackageConfig is supposed to be installed...")
 endif()
